@@ -75,65 +75,65 @@ etc...
 #### Counting to 31, with decimal input to binary output
 The code below shows how one could code from 0 to 31 with binary. The output (binary) is represented as lights either being on or off.
 ```.c
-// Ports for the different LEDs
-// Led nr. counted from the right -> left
-int led5 = 13;
-int led4 = 12;
-int led3 = 11;
-int led2 = 10;
-int led1 = 9;
+int bitA = 13;
+int bitB = 12;
+int bitC = 11;
+int bitD = 10;
+int bitE = 9;
 
 void setup()
 {
   Serial.begin(9600);
-  pinMode(13, OUTPUT);
-  pinMode(12, OUTPUT);
-  pinMode(11, OUTPUT);
-  pinMode(10, OUTPUT);
-  pinMode(9, OUTPUT);
+  pinMode(bitA, OUTPUT);
+  pinMode(bitB, OUTPUT);
+  pinMode(bitC, OUTPUT);
+  pinMode(bitD, OUTPUT);
+  pinMode(bitE, OUTPUT);
+  
+  for (int n = 0; n <= 31; n++) {
+  	//bit E
+    if (n % 2 == 1) {
+    	digitalWrite(bitE, HIGH);
+  	}else
+    {
+      digitalWrite(bitE, LOW);
+    }
+    //bit D 
+    if (n % 4 > 1) {
+      digitalWrite(bitD, HIGH);
+     }else
+    {
+      digitalWrite(bitD, LOW);
+    }
+     //bit C
+    if (n % 8 > 3) {
+      digitalWrite(bitC, HIGH);
+    }else
+    {
+      digitalWrite(bitC, LOW);
+    }
+     //bit B
+    if (n % 16 > 7) {
+      digitalWrite(bitB, HIGH);
+    }else
+    {
+      digitalWrite(bitB, LOW);
+    }
+     //bit A
+    if (n % 32 > 15) {
+      digitalWrite(bitA, HIGH);
+    }else
+    {
+      digitalWrite(bitA, LOW);
+    }
+    delay(2000);
+  }
 }
 
-int i = 1;
 
 void loop()
 {
-  for (i=1; i<=31; i++) {
-    Serial.print("Num: ");
-    Serial.println(i);
-    
-    // Condition for the first led
-    if (i % 2 != 0) {
-      digitalWrite(led1, HIGH);
-    }
-    // Condition for the second led
-    if (i % 4 > 1) {
-      digitalWrite(led2, HIGH);
-    }
-    // Condition for the third led
-    if (i % 8 > 3) {
-      digitalWrite(led3, HIGH);
-    }
-    // Condition for the fourth led
-    if (i % 16 > 7) {
-      digitalWrite(led4, HIGH);
-    }
-    // Condition for the fifth led
-    if (i % 32 > 15) {
-      digitalWrite(led5, HIGH);
-    }
-    
-    // Resets everything
-    delay(1000);
-    digitalWrite(led1, LOW);
-    digitalWrite(led2, LOW);
-    digitalWrite(led3, LOW);
-    digitalWrite(led4, LOW);
-    digitalWrite(led5, LOW);
-    delay(300);
-    
-  }
-  // Delay 3 sec before next counting
-  delay(3000);
+  
 }
 ```
 The wiring for this problem is:
