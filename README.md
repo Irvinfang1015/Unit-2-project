@@ -139,7 +139,8 @@ void loop()
 The wiring for this problem is:
 ![WiringBinaryCounter](wiringBinaryCounter.png)
 
-
+### What is usability?
+Usability according to [1] is part of the users experience. Process of designing a product with the user
 Evaluation
 ----------
 
