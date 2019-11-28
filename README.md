@@ -1,3 +1,34 @@
+Feedback Nov 28 (you can delete this section later it will remain in the history)
+
+|No.|How to improve        |
+|-|------------- |
+|①| The definition of the problem needs some work. You described the unit 2's project and context, but we need to identify a ficticious client (invent one), and a ficticious need. Answer the questions: Who is the client? Why is the product being developed? Then you can add at least 5 success criteria that are measurable. You current criterion 1 says: is it **easy** to use. How do we measure easiness? 
+|②|Add the proposed solution justifying the choices of software (C) and tools (Arduino). here you can include your homework on comparing BASH and Arduino's C.|
+|③| Under the development section, you are including all the source code for the programs. It is better if you include only small parts of the code that are new to you or that show an important algorithm. This is because the source code is anyway in the repo so no need to repeat. 
+
+**For example:** The code below shows how to read the status of a button connected to port 13 in the Arduino:
+```.c
+bool A = digitalRead(13);
+```
+Note that the variable A was created of type Bool since the input is binary data.|
+
+|No.|How to improve        |
+|-|------------- |
+|②| Add figure caption to your figures and then explain what you see in them. Figures are quite ambiguous by themselves.| 
+
+**For example:**
+
+<img src="decimalToBinaryFlowchart.jpg" width="50%" height="50%">
+
+**Fig. 2.** Flow diagram for the program that converts a number from binary to decimal representation.
+
+As shown in **Fig. 2**, the algorihtms that converts a number from binary to decimal requries the calcualtion of ... 
+
+頑張ってください。
+
+
+-----
+
 ![CoverPhoto](mars.jpg)
 
 Unit 2 project: Communication to the Moon and Mars
