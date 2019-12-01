@@ -113,21 +113,8 @@ Fig. 2. Flow diagram for the program that converts a number from binary to decim
 #### Counting to 31, with decimal input to binary output
 The code below shows how one could code from 0 to 31 with binary. The output (binary) is represented as lights either being on or off.
 ```.c
-int bitA = 13;
-int bitB = 12;
-int bitC = 11;
-int bitD = 10;
-int bitE = 9;
-
 void setup()
 {
-  Serial.begin(9600);
-  pinMode(bitA, OUTPUT);
-  pinMode(bitB, OUTPUT);
-  pinMode(bitC, OUTPUT);
-  pinMode(bitD, OUTPUT);
-  pinMode(bitE, OUTPUT);
-  
   for (int n = 0; n <= 31; n++) {
   	//bit E
     if (n % 2 == 1) {
@@ -182,37 +169,21 @@ Fig. 3. Wiring for the binary counter.
 ### 7-segment display
 It is an electronic display device for displaying decimal numeral, and widely used in digital clocks, electronic meters, basic calculators, etc.
 It consists of 8 LEDs connected in parallel that can be lit in different combinations to display the numbers
-![7-segmentDisplay](IMG_0472.HEIC)
-Fig. 4. Wiring for 7-segment display.
+
+A boolean or bool is a data type in coding that has two possible values: either true or false
+In a 7-segment display, it is able to show the status of a button
+The code below shows how to read the status of a button connected to port 13 in the Arduino:
+```.c
+bool A = digitalRead(13);
+```
+![7-segmentDisplay](sevenSegmentDisplay.jpg)
+![7-segmentDisplay](sevenSegmentDisplayTable.jpg)
+Fig. 4. Table for 7-segment display.
+![7-segmentDisplay](sevenSegmentDisplayWiring.jpg)
+Fig. 5. Wiring for 7-segment display.
 
 This is the code for the 7-segment display
 ```.c
-int butA = 13;
-int butB = 12;
-int butC = 11;
-int outA = 1;
-int outB = 2;
-int outC = 3;
-int outD = 4;
-int outE = 5;
-int outF = 6;
-int outG = 7;
-
-void setup()
-{
-  Serial.begin(9600);
-  pinMode(butA, INPUT);
-  pinMode(butB, INPUT);
-  pinMode(butC, INPUT);
-  pinMode(outA, OUTPUT);
-  pinMode(outB, OUTPUT);
-  pinMode(outC, OUTPUT);
-  pinMode(outD, OUTPUT);
-  pinMode(outE, OUTPUT);
-  pinMode(outF, OUTPUT);
-  pinMode(outG, OUTPUT);
-}
-
 bool A = 0;
 bool B = 0;
 bool C = 0;
