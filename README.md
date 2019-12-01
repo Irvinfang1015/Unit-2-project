@@ -171,7 +171,7 @@ It is an electronic display device for displaying decimal numeral, and widely us
 It consists of 8 LEDs connected in parallel that can be lit in different combinations to display the numbers
 
 A boolean or bool is a data type in coding that has two possible values: either true or false
-In a 7-segment display, it is able to show the status of a button
+In a 7-segment display, it is able to show the status of a button.
 The code below shows how to read the status of a button connected to port 13 in the Arduino:
 ```.c
 bool A = digitalRead(13);
@@ -212,6 +212,69 @@ void loop()
   digitalWrite(outG, (!A && B) || (A && !C) || (A && !B));
 }
 ```
+
+### English Input system
+Stations will have to communicate seamlessly using English.
+
+This is the code for the English input system
+```.c
+//This program consists of a English input system that has letters A-Z, 0-9, and a send and select function
+String text = "";
+int index = 0; 
+// add all the letters and digits to the keyboard
+String keyboard[]={"A", "B", "C", "D", “E”, “F” “G”, “H”, “I”, “J”, “K”, “L”, “M”, “N”, “O”, “P”, “Q”, “R”, “S”, “T”, “U”, “V”, “W”, “S”, “Y”, “Z”, “0”, “1”, “2”, “3”, “4”, “5”, “6”, “7”, “8”, “9”, “ “, “SENT", "DEL"};
+int numOptions = 39; 
+
+void setup()
+{
+  Serial.begin(9600);
+  attachInterrupt(0, changeLetter, RISING);//button A in port 2
+  attachInterrupt(1, selected, RISING);//button B in port 3
+}
+
+void loop()
+{
+  Serial.println("Option (Select:butB, Change:butA): " + keyboard[index]);
+  Serial.println("Message: "+ text);
+  delay(100);
+}
+
+//This function changes the letter in the keyboard
+void changeLetter(){
+  index++;
+//If the user reaches the end of the letters array, it goes back to the first letter
+if(index>numOptions)
+{
+  	index=0; 
+} 
+
+//this function adds the letter to the text or send the msg
+void selected()
+{
+if (key==”DEL”)
+{
+int len= text.length();
+text.remove(len -1);
+}
+
+else if (key==”SEND”)
+{
+Serial.println(“Message sent”);
+text=”“;
+}
+
+else
+{
+text += key;
+}
+index=0;
+}
+```
+
+
+Fig. 6 Circuit used for testing the program in this document. Green button is for changing the option. Button purple is for selecting.
+![EnglisbInputSystem](EnglishInputSystemWiring.jpg)
+
 
 
 Evaluation
