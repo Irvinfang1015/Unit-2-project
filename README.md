@@ -59,8 +59,8 @@ The last requirement of the system is that the input method of English character
 
 Success Criteria
 1. The system has an easy to use user interface on all parts
-1. The messages are translated flawslessly between the languages
-1. The messages are transmitted flawlessly between the source and receiver
+2. The message can be sent out perfectly throughout the different languages
+3. The message can be sent out perfectly from the sender to the receiver
 
 
 Design
@@ -81,6 +81,12 @@ Development
 
 The most important part of the development is the translations in between English, morse and binary. People will have to understand both morse and binary communication in order to complete this project.
 
+### Definition of usability
+-The fact of something being easy to use, or the degree to which it is easy to use (Part of the users experience)
+-The degree of ease with which products such as software and Web applications can be used to achieve required goals effectively and efficiently. Usability assesses the level of difficulty involved in using a user interface. Although usability can only be quantified through indirect measures and is therefore a nonfunctional requirement, it is closely related to a product's functionality.
+
+### Definition of Human Centered Design
+-An approach to interactive systems development that aims to make systems usable and useful by focusing on the users, their needs and requirements, and by applying human factors/ergonomics, usability knowledge, and techniques. This approach enhances effectiveness and efficiency, improves human well-being, user satisfaction, accessibility and sustainability; and counteracts possible adverse effects of use on human health, safety and performance
 
 ### Communication with binary
 Binary is a number expressed in the base-2 numeral system or binary numeral system, which uses only two symbols: typically "0" (zero) and "1" (one).
@@ -101,6 +107,7 @@ etc...
 
 **To convert a number from decimal to binary, the flowchart below must be used:**
 ![flowchartDecToBin](decimalToBinaryFlowchart.jpg)
+Fig. 2. Flow diagram for the program that converts a number from binary to decimal representation.
 
 
 #### Counting to 31, with decimal input to binary output
@@ -169,9 +176,73 @@ void loop()
 ```
 The wiring for this problem is:
 ![WiringBinaryCounter](wiringBinaryCounter.png)
+Fig. 3. Wiring for the binary counter.
 
-### What is usability?
-Usability according to [1] is part of the users experience. Process of designing a product with the user
+
+### 7-segment display
+It is an electronic display device for displaying decimal numeral, and widely used in digital clocks, electronic meters, basic calculators, etc.
+It consists of 8 LEDs connected in parallel that can be lit in different combinations to display the numbers
+![7-segmentDisplay](IMG_0472.HEIC)
+Fig. 4. Wiring for 7-segment display.
+
+This is the code for the 7-segment display
+```.c
+int butA = 13;
+int butB = 12;
+int butC = 11;
+int outA = 1;
+int outB = 2;
+int outC = 3;
+int outD = 4;
+int outE = 5;
+int outF = 6;
+int outG = 7;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(butA, INPUT);
+  pinMode(butB, INPUT);
+  pinMode(butC, INPUT);
+  pinMode(outA, OUTPUT);
+  pinMode(outB, OUTPUT);
+  pinMode(outC, OUTPUT);
+  pinMode(outD, OUTPUT);
+  pinMode(outE, OUTPUT);
+  pinMode(outF, OUTPUT);
+  pinMode(outG, OUTPUT);
+}
+
+bool A = 0;
+bool B = 0;
+bool C = 0;
+
+void loop()
+{
+  A = digitalRead(butA);
+  B = digitalRead(butB);
+  C = digitalRead(butC);
+  Serial.print (A);
+  Serial.print (B);
+  Serial.println (C);
+  // Light A
+  digitalWrite(outA, B || (C && A) || (!C && !A));
+  // Light B
+  digitalWrite(outB, !A || (!B && !C) || (C && B));
+  // Light C
+  digitalWrite(outC, C || (!C && !B) || (A && B));
+  // Light D
+  digitalWrite(outD, (!C && !A) || (B && !C) || (B && !A) || (A && C && !B));
+  // Light E
+  digitalWrite(outE, (!A && !C) || (B && !C));
+  // Light F
+  digitalWrite(outF, (A && !B) || (A && !C) || (!C && !B));
+  // Light G
+  digitalWrite(outG, (!A && B) || (A && !C) || (A && !B));
+}
+```
+
+
 Evaluation
 ----------
 
