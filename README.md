@@ -27,12 +27,36 @@ Another challenge is that none of the people at the stations know morse or binar
 
 The last requirement of the system is that the input method of English characters to create the message only uses **2** push buttons. 
 
-#### Justification
+### Justification
 **Bash vs. Arduino (C)**
+
 Bash:
 
 Pros
--
+- Highly useful for scripting when running code directly from terminal to perform simple, repetitive jobs
+- Gives users a lot of control over the system being used
+- Widely adopted
+
+Cons
+- Unsatisfactory, complicated syntax
+- Small mistakes of little relevance
+- Can only run in specific environments, not including Arduino hardwares
+
+
+Arduino (C):
+
+Pros
+- Industry standard, commonly used
+- Lower level (closer to the computer hardware)
+- Relatively simple
+- Very optimized and fast
+
+Cons
+- Syntax-wise isn't as simple compared to other high level languages
+
+Why I chose Arduino (C)
+Both programming languages have their pros and cons, and it's hard to compare which one's better since they're used in different areas. When choosing the language for this project, the only option is Arduino (C), because it is the only option that meets the hardware requirements, functionality, and usability. Also because Arduino is more cheap and easy to use compared to other hardware.
+
 
 Success Criteria
 1. The system has an easy user interface
@@ -42,6 +66,7 @@ Success Criteria
 5. All messages have to be input from English
 
 Below is the test plan to check if all functions meet the success criteria:
+
 | Test plan                                                                                      | Input | Output | Check |
 |------------------------------------------------------------------------------------------------|-------|--------|-------|
 | 1. The system has an easy user interface                                                       |       |        |       |
