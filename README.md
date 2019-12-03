@@ -39,6 +39,10 @@ Design
 A diagram of the flow of information looks like this:
 ![PlanetDiagram](planetDiagram.png)
 
+A system diagram of this project looks like this:
+![SystemDiagram](SystemDiagram.jpg)
+
+
 
 
 
