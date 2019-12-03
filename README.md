@@ -80,22 +80,21 @@ Design
 
 A diagram of the flow of information looks like this:
 ![PlanetDiagram](planetDiagram.png)
+Fig. A. Diagram of the flow of information
 
 A system diagram of this project looks like this:
 ![SystemDiagram](SystemDiagram.jpg)
+Fig. 2. System diagram of this project
 
+Explaining the system diagram:
+1. Message should be sent in English string, needs a specific destination
+2. 2 button input (further explained in development section)
+3. English message will be translated to the appropriate language according to where it was sent to
+4. Message will be sent and translated to the right stations
+5. Message in either morse or binary will be translated back to English
+6. Stations will be able to receive the message
 
-
-
-
-
-
-
-
-Development
-----------
-
-The most important part of the development is the translations in between English, morse and binary. People will have to understand both morse and binary communication in order to complete this project.
+Key principles: Usability and Human Centered Design
 
 ### Definition of usability
 -The fact of something being easy to use, or the degree to which it is easy to use (Part of the users experience)
@@ -103,6 +102,12 @@ The most important part of the development is the translations in between Englis
 
 ### Definition of Human Centered Design
 -An approach to interactive systems development that aims to make systems usable and useful by focusing on the users, their needs and requirements, and by applying human factors/ergonomics, usability knowledge, and techniques. This approach enhances effectiveness and efficiency, improves human well-being, user satisfaction, accessibility and sustainability; and counteracts possible adverse effects of use on human health, safety and performance
+
+
+Development
+----------
+
+The most important part of the development is the translations in between English, morse and binary. People will have to understand both morse and binary communication in order to complete this project.
 
 ### Communication with binary
 Binary is a number expressed in the base-2 numeral system or binary numeral system, which uses only two symbols: typically "0" (zero) and "1" (one).
@@ -230,7 +235,14 @@ void loop()
 ```
 
 ### English Input system
-Stations will have to communicate seamlessly using English.
+Stations will have to communicate seamlessly with English using a two button input sytem.
+
+The two buttons are labeled A & B:
+- When A is pressed the selection changes, going through a constant rotation
+- When B is pressed the character or action (SEND & DEL) is selected, tracked to the final word.
+
+This is the flowchart of the code:
+![2-buttonInput](2buttonInputflowchart.jpg)
 
 This is the code for the English input system
 ```.c
