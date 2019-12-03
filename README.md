@@ -27,11 +27,28 @@ Another challenge is that none of the people at the stations know morse or binar
 
 The last requirement of the system is that the input method of English characters to create the message only uses **2** push buttons. 
 
+#### Justification
+**Bash vs. Arduino (C)**
+Bash:
+
+Pros
+-
+
 Success Criteria
-1. The system has an easy to use user interface on all parts
+1. The system has an easy user interface
 2. The message can be sent out perfectly throughout the different languages
 3. The message can be sent out perfectly from the sender to the receiver
+4. The system is easy to install
+5. All messages have to be input from English
 
+Below is the test plan to check if all functions meet the success criteria:
+| Test plan                                                                                      | Input | Output | Check |
+|------------------------------------------------------------------------------------------------|-------|--------|-------|
+| 1. The system has an easy user interface                                                       |       |        |       |
+| 2. The message can be sent out perfectly throughout the different languages                    |       |        |       |
+| 3. The message can be sent out perfectly from the sender to the receiver                       |       |        |       |
+| 4. The system is easy to install                                                               |       |        |       |
+| 5. All messages have to be input from English                                                  |       |        |       |
 
 Design
 ----------
