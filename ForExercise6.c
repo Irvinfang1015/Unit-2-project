@@ -10,7 +10,7 @@ int main()
     printf("Enter ending range of number: ");
     scanf("%d", &end);
 
-    printf("All Perfect numbers between 1 to %d:\n", end);
+    printf("All Perfect numbers between %d to %d:\n",start, end);
     
     //Loop from starting range to ending range
     for(i=start; i<=end; i++)
