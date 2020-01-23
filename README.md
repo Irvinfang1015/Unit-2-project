@@ -570,6 +570,8 @@ void send()
 Program is explained through the hashtags in the code
 
 This is the wiwring of the program with some pictures
+![MorseToEnglish](MorseToEnglish.png)
+![MorseToEnglish](MroEpic.png)
 
 
 Evaluation
