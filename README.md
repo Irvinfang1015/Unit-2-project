@@ -567,7 +567,10 @@ void send()
   letter = " ";
 }
 ```
-Program is explained throughout the 
+Program is explained through the hashtags in the code
+
+This is the wiwring of the program with some pictures
+
 
 Evaluation
 ----------
