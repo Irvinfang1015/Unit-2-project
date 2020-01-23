@@ -569,10 +569,11 @@ void send()
 ```
 Program is explained through the hashtags in the code
 
-This is the wiwring of the program with some pictures
+This is the wiring of the program with some pictures
 ![MorseToEnglish](MorseToEnglish.png)
-![MorseToEnglish](MroEpic.png)
-
+Fig. 7. Wiring of Morse to English
+![MorseToEnglish](MroEpic.PNG)
+Fig. 8. Picture of Morse to English
 
 Evaluation
 ----------
