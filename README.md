@@ -1110,8 +1110,8 @@ void storeChar(String character) {
 
 
 ### Engish to binary
-This flowchart and code is for the morse to english program.
-![engToBin](FCengToBin.jpg)
+This code is for the morse to english program.
+
 ```.c
 
 #include <LiquidCrystal.h>
